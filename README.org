@@ -1,0 +1,12 @@
+* Bb9BlogConverter
+
+1. Export your class data in BlackBoard 9 (Bb9) as XMLs
+
+2. Execute this
+
+** Usage
+
+#+BEGIN_SRC sh
+./bb9blog.rb [Your directory containing exported XMLs] [output directory]
+#+END_SRC
+

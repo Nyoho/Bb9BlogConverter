@@ -25,7 +25,7 @@ end
 
 users = Set.new
 usershash = {}
-blogs = []
+@blogs = []
 
 Dir.glob(data_dir + '/*.dat') do |filename|
   puts "Loading #{filename} ..."
@@ -67,7 +67,7 @@ Dir.glob(data_dir + '/*.dat') do |filename|
         entries << entry
       end
       blog.entries = entries
-      blogs << blog
+      @blogs << blog
     end
 
   rescue => e
@@ -81,16 +81,33 @@ require 'fileutils'
 require 'redcarpet'
 require 'erb'
 
-blogs.sort! {|a, b| a.date <=> b.date }
+@blogs.sort! {|a, b| a.date <=> b.date }
 
 markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
 FileUtils.mkdir_p(output_dir) unless FileTest.directory?(output_dir)
 
-index_erb = ERB.new(File.read('index.html.erb'))
-page_erb = ERB.new(File.read('page.html.erb'))
-print erb.result(binding())
+index_erb = ERB.new(File.read('templates/index.html.erb'))
+page_erb = ERB.new(File.read('templates/page.html.erb'))
 
-blogs.each_with_index do |blog,i|
+def copyright_html
+  'Copyright &copy; 2016 Someone. All rights reserved.'
+end
+
+def sidemenu_html
+  <<-EOS
+  <h2>Side</h2>
+  <p>This is a side.</p>
+  <p>This is a side.</p>
+  EOS
+end
+                                           
+def blog_list_html
+  @blogs.map.with_index do |blog,i|
+    %Q|<li><a href="blog#{i}.html">#{blog.title}</a></li>|
+  end.join "\n"
+end
+
+@blogs.each_with_index do |blog,i|
   File.open("#{output_dir}/blog#{i}.md", 'w') do |f|
     f.puts "# #{blog.title}"
     blog.entries.each do |entry|
@@ -106,7 +123,5 @@ blogs.each_with_index do |blog,i|
 end
 
 File.open("#{output_dir}/index.html", 'w') do |f|
-  blogs.each_with_index do |blog,i|
-    f.puts %Q|<li><a href="blog#{i}.html">#{blog.title}</a></li>|
-  end
+  f.puts index_erb.result(binding())
 end

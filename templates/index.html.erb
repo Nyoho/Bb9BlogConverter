@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>p-adic Not Found</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+        <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script> -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css" rel="stylesheet" type="text/css" />
+        <style>
+         body {
+             font-family: 'Avenir Next', Quicksand, Arial, YuGothic, 'Yu Gothic', 游ゴシック体, 游ゴシック, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'Hiragino Kaku Gothic Pro', sans-serif;
+             font-size: 99%;
+             line-height: 2em;
+             background-color: #ffffe0;
+             color: #555;
+         }
+         header {
+             overflow: hidden;
+             height: 9em; /* ? */
+             width: 100%;
+         }
+         .main-nav {
+             display: flex;
+             position: relative;
+	         height: 44px;
+             visibility: visible;
+             height: 5em;
+             width: 100%;
+             overflow-x: auto;
+             -webkit-overflow-scrolling: touch;
+         }
+         .main-nav ul {
+	         height: 44px;
+             display: inline-table;
+             max-width: 100%;
+         }
+         .main-nav li {
+             float: left;
+             word-wrap: break-word;
+             display: table-cell;
+             text-align: -webkit-match-parent;
+             white-space: nowrap;
+             padding: 0 12px;
+             /* flex: 1;
+                display: inline-block; */
+             list-style: none;
+         }
+         main {
+             margin: 0 auto;
+             flex: 1;
+             /* background: #c0f0f0; */
+             padding: 10px;
+         }
+         aside {
+             width: 30%;
+             /* background: #f0c0f0; */
+             padding: 10px;
+         }
+         footer {
+             font-size: smaller;
+             text-align: center;
+         }
+         @media (min-width: 600px) {
+             #main-container {
+                 display: flex;
+                 margin: 0 auto;
+                 max-width: 800px;
+             }
+             .main {
+                 margin: 0 10px 0 0;
+             }
+         }
+        </style>
+        <script>
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>Hey! World!</h1>
+            <nav class="main-nav">
+                <ul style="width: 1000px;">
+                    <li>menu A</li>
+                    <li>menu B</li>
+                    <li>menu C</li>
+                    <li>menu D</li>
+                    <li>menu E</li>
+                    <li>menu F</li>
+                    <li>About</li>
+                </ul>
+            </nav>
+        </header>
+
+        <div id="main-container">
+
+            <main role="main">
+                <article>
+                    <h2>Main</h2>
+
+                    <section>
+                        <%= blog_list_html %>
+                    </section>
+                </article>
+            </main>
+
+            <aside>
+                <%= sidemenu_html %>
+            </aside>
+
+        </div>
+        
+        <footer>
+            <p><%= copyright_html %></p>
+        </footer>
+    </body>
+</html>

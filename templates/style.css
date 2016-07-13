@@ -36,8 +36,13 @@ header {
 main {
     margin: 0 auto;
     flex: 1;
-    /* background: #c0f0f0; */
     padding: 10px;
+}
+header > h1 {
+    color: #804000;
+}
+main > h2 {
+    margin-top: 2em;
 }
 header, aside {
     padding: 8px;
@@ -62,7 +67,6 @@ footer {
     }
     aside {
         width: 30%;
-        /* background: #f0c0f0; */
         padding: 10px;
     }
 }

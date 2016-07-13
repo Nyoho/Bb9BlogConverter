@@ -98,7 +98,7 @@ def copyright_html
 end
 
 def sidemenu_html
-  '<h2>Sidemenu</h2><ul>' + '<li><a href="index.html">Top</a></li>' + blog_list_html + '</ul>'
+  '<h2>Sidemenu</h2><ul>' + blog_list_html + '</ul>'
 end
                                            
 def blog_list_html

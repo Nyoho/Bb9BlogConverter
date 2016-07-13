@@ -8,7 +8,6 @@ body {
 header {
     overflow: hidden;
     height: 9em; /* ? */
-    width: 100%;
 }
 .main-nav {
     display: flex;
@@ -32,8 +31,6 @@ header {
     text-align: -webkit-match-parent;
     white-space: nowrap;
     padding: 0 12px;
-    /* flex: 1;
-                display: inline-block; */
     list-style: none;
 }
 main {
@@ -42,22 +39,30 @@ main {
     /* background: #c0f0f0; */
     padding: 10px;
 }
-aside {
-    width: 30%;
-    /* background: #f0c0f0; */
-    padding: 10px;
+header, aside {
+    padding: 8px;
 }
 footer {
     font-size: smaller;
     text-align: center;
 }
-@media (min-width: 600px) {
+@media (min-width: 800px) {
+    header, #main-container {
+        margin: 0 auto;
+        max-width: 1000px;
+    }
     #main-container {
         display: flex;
-        margin: 0 auto;
-        max-width: 800px;
+    }
+    nav {
+        float: right;
     }
     .main {
         margin: 0 10px 0 0;
+    }
+    aside {
+        width: 30%;
+        /* background: #f0c0f0; */
+        padding: 10px;
     }
 }

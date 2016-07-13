@@ -107,6 +107,18 @@ def blog_list_html
   end.join "\n"
 end
 
+def index_title
+  'main'
+end
+
+def page_title
+  @page_title + ' - '
+end
+
+def body_html
+  @html_body
+end
+
 @blogs.each_with_index do |blog,i|
   File.open("#{output_dir}/blog#{i}.md", 'w') do |f|
     f.puts "# #{blog.title}"
@@ -118,9 +130,16 @@ end
     end
   end
   File.open("#{output_dir}/blog#{i}.md", 'r') do |f|
-    markdown.render(f.read)
+    File.open("#{output_dir}/blog#{i}.html", 'w') do |html|
+      @html_body = markdown.render(f.read)
+      @page_title = blog.title
+      html.puts page_erb.result(binding())    
+    end
   end
 end
+
+# Dir.glob("#{output_dir}/*.md") do |filename|
+# end
 
 File.open("#{output_dir}/index.html", 'w') do |f|
   f.puts index_erb.result(binding())

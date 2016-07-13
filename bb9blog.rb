@@ -32,6 +32,10 @@ Dir.glob(data_dir + '/*.dat') do |filename|
   begin
     doc = REXML::Document.new(open(filename))
 
+    doc.elements.each('COURSE/TITLE') do |u|
+      @cource_title = u.attribute('value').value
+    end
+    
     doc.elements.each('COURSEMEMBERSHIPS/COURSEMEMBERSHIP') do |u|
       id = u.elements['USERID'].attribute('value').value
       user = users.find { |a| a.id == id } || User.new
@@ -104,11 +108,11 @@ def blog_list_html
 end
 
 def index_title
-  'main'
+  @cource_title
 end
 
 def page_title
-  @page_title + ' - '
+  @page_title + ' - ' + @cource_title
 end
 
 def body_html

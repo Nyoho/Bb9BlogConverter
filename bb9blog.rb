@@ -94,11 +94,7 @@ def copyright_html
 end
 
 def sidemenu_html
-  <<-EOS
-  <h2>Side</h2>
-  <p>This is a side.</p>
-  <p>This is a side.</p>
-  EOS
+  '<h2>Sidemenu</h2><ul>' + '<li><a href="index.html">Top</a></li>' + blog_list_html + '</ul>'
 end
                                            
 def blog_list_html

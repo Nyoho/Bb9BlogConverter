@@ -140,3 +140,5 @@ end
 File.open("#{output_dir}/index.html", 'w') do |f|
   f.puts index_erb.result(binding())
 end
+
+FileUtils.copy 'templates/style.css', "#{output_dir}/"

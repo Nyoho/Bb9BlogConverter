@@ -1,0 +1,63 @@
+body {
+    font-family: 'Avenir Next', Quicksand, Arial, YuGothic, 'Yu Gothic', 游ゴシック体, 游ゴシック, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'Hiragino Kaku Gothic Pro', sans-serif;
+    font-size: 99%;
+    line-height: 2em;
+    background-color: #ffffe0;
+    color: #555;
+}
+header {
+    overflow: hidden;
+    height: 9em; /* ? */
+    width: 100%;
+}
+.main-nav {
+    display: flex;
+    position: relative;
+	height: 44px;
+    visibility: visible;
+    height: 5em;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.main-nav ul {
+	height: 44px;
+    display: inline-table;
+    max-width: 100%;
+}
+.main-nav li {
+    float: left;
+    word-wrap: break-word;
+    display: table-cell;
+    text-align: -webkit-match-parent;
+    white-space: nowrap;
+    padding: 0 12px;
+    /* flex: 1;
+                display: inline-block; */
+    list-style: none;
+}
+main {
+    margin: 0 auto;
+    flex: 1;
+    /* background: #c0f0f0; */
+    padding: 10px;
+}
+aside {
+    width: 30%;
+    /* background: #f0c0f0; */
+    padding: 10px;
+}
+footer {
+    font-size: smaller;
+    text-align: center;
+}
+@media (min-width: 600px) {
+    #main-container {
+        display: flex;
+        margin: 0 auto;
+        max-width: 800px;
+    }
+    .main {
+        margin: 0 10px 0 0;
+    }
+}

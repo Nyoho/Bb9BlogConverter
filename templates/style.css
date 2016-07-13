@@ -40,6 +40,9 @@ main {
 main > h2 {
     margin-top: 2em;
 }
+li {
+    margin-left: 1em;
+}
 header, aside {
     padding: 8px;
 }

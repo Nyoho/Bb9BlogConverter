@@ -94,7 +94,7 @@ index_erb = ERB.new(File.read('templates/index.html.erb'))
 page_erb = ERB.new(File.read('templates/page.html.erb'))
 
 def copyright_html
-  'Copyright &copy; 2016 Someone. All rights reserved.'
+  'Copyright &copy; 2016 Someone. All rights reserved. Powered by <a href="https://github.com/Nyoho/Bb9BlogConverter">Bb9BlogConverter</a>.'
 end
 
 def sidemenu_html

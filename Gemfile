@@ -1,2 +1,2 @@
 gem 'redcarpet'
-
+gem 'htmltoword'

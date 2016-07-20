@@ -119,6 +119,7 @@ def body_html
   @html_body
 end
 
+require 'htmltoword'
 @blogs.each_with_index do |blog,i|
   File.open("#{output_dir}/blog#{i}.md", 'w') do |f|
     f.puts "# #{blog.title}"
@@ -128,12 +129,16 @@ end
       f.puts "- #{entry.create_date}\n"
       f.puts "\n#{entry.text}\n\n"
     end
+    File.open("#{output_dir}/#{blog.title.gsub(/\//,'_')}.docx", 'w') do |doc|
+      doc.puts Htmltoword::Document.create markdown.render(File.read(f.path)), "dummy"
+    end
   end
   File.open("#{output_dir}/blog#{i}.md", 'r') do |f|
     File.open("#{output_dir}/blog#{i}.html", 'w') do |html|
       @html_body = markdown.render(f.read)
       @page_title = blog.title
-      html.puts page_erb.result(binding())    
+      html_string = page_erb.result(binding())
+      html.puts html_string
     end
   end
 end

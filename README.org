@@ -1,7 +1,10 @@
 * Bb9BlogConverter
 
 1. Export your class data in BlackBoard 9 (Bb9) as XMLs
-
+   1) 左メニューで [コントロールパネル] → [パッケージとユーティリティ] → [コースのエクスポート/アーカイブ]
+   2) 右ペイン上部の [コースのアーカイブ]
+   3) [送信]ボタンクリック
+   4) E-mailが来るまで待つ
 2. Execute this
 
 ** Usage

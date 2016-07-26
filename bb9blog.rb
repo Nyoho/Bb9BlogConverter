@@ -126,7 +126,7 @@ require 'htmltoword'
     blog.entries.each do |entry|
       f.puts "## #{entry.title}"
       f.puts "\n- #{entry.creator.name} (#{entry.creator.batchuid})"
-      f.puts "- #{entry.create_date}\n"
+      f.puts "- #{entry.create_date.localtime}\n"
       f.puts "\n#{entry.text}\n\n"
     end
     File.open("#{output_dir}/#{blog.title.gsub(/\//,'_')}.docx", 'w') do |doc|

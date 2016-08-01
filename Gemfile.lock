@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    pandoc-ruby (2.0.1)
+    redcarpet (3.3.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  pandoc-ruby
+  redcarpet
+
+BUNDLED WITH
+   1.13.6

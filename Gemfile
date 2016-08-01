@@ -1,2 +1,4 @@
+source 'https://rubygems.org'
+
 gem 'redcarpet'
-gem 'htmltoword'
+gem 'pandoc-ruby'

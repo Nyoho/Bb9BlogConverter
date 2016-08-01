@@ -119,7 +119,7 @@ def body_html
   @html_body
 end
 
-require 'htmltoword'
+require 'pandoc-ruby'
 @blogs.each_with_index do |blog,i|
   File.open("#{output_dir}/blog#{i}.md", 'w') do |f|
     f.puts "# #{blog.title}"
@@ -129,9 +129,11 @@ require 'htmltoword'
       f.puts "- #{entry.create_date.localtime}\n"
       f.puts "\n#{entry.text}\n\n"
     end
-    File.open("#{output_dir}/#{blog.title.gsub(/\//,'_')}.docx", 'w') do |doc|
-      doc.puts Htmltoword::Document.create markdown.render(File.read(f.path)), "dummy"
-    end
+    system("pandoc \"#{output_dir}/blog#{i}.md\" -o \"#{output_dir}/#{blog.title.gsub(/\//,'_')}.docx\"")
+    # File.open("#{output_dir}/#{blog.title.gsub(/\//,'_')}.docx", 'w') do |doc|
+    #   converter = PandocRuby.new(markdown.render(File.read(f.path)), :from => :markdown, :to => :docx)
+    #   doc.puts converter.convert
+    # end
   end
   File.open("#{output_dir}/blog#{i}.md", 'r') do |f|
     File.open("#{output_dir}/blog#{i}.html", 'w') do |html|

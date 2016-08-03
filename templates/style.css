@@ -36,9 +36,14 @@ main {
     margin: 0 auto;
     flex: 1;
     padding: 10px;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
 }
 main > h2 {
     margin-top: 2em;
+    border-left: 4px solid #a0c9df;
+    padding-left: 8px;
 }
 li {
     margin-left: 1em;
@@ -61,8 +66,9 @@ footer {
     nav {
         float: right;
     }
-    .main {
+    main {
         margin: 0 10px 0 0;
+        padding: 20px;
     }
     aside {
         font-size: 90%;

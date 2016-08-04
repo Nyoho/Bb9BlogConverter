@@ -19,7 +19,6 @@ header {
     -webkit-overflow-scrolling: touch;
 }
 .main-nav ul {
-	height: 44px;
     display: inline-table;
     max-width: 100%;
 }
@@ -29,9 +28,35 @@ header {
     display: table-cell;
     text-align: -webkit-match-parent;
     white-space: nowrap;
-    padding: 0 12px;
+    position: relative;
+    padding: 0;
+    margin: 0;
     list-style: none;
 }
+.main-nav li > a {
+    padding: 0px 2em;
+    color: #eee;
+    text-decoration: none;
+}
+.main-nav ul {
+    background-color: #202020;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin: 0;
+    padding: 0;
+}
+.main-nav li:after {
+  display: block;
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-bottom: solid 3px #00a0ff;  
+  transform: scaleX(0);  
+  transition: transform 216ms ease-in-out;
+}
+.main-nav li:hover:after { transform: scaleX(1); }
 main {
     margin: 0 auto;
     flex: 1;

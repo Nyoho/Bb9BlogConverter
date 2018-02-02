@@ -27,7 +27,7 @@ users = Set.new
 usershash = {}
 @blogs = []
 
-Dir.glob(data_dir + '/*.dat') do |filename|
+Dir.glob(data_dir + '/*.dat').sort.each do |filename|
   puts "Loading #{filename} ..."
   begin
     doc = REXML::Document.new(open(filename))

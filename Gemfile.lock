@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     pandoc-ruby (2.0.2)
-    redcarpet (3.5.0)
+    redcarpet (3.6.0)
 
 PLATFORMS
   ruby
